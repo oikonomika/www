@@ -11,7 +11,71 @@ html(lang="ja")
     meta(property='og:type', content='website')
     meta(property='og:description', content='合同会社オイコノミカの企業説明サイトです。')
 
+
+    link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet')
+
     link(rel="stylesheet" href="/css/main.css")
 
   body
-    h1 合同会社オイコノミカの企業説明サイトです。
+    header
+      nav
+        h1: a(href='', title='合同会社オイコノミカ'): img(src='./img/logomark.png', alt='合同会社オイコノミカ')
+
+        ul
+          li: a(href="#message") Message
+          li: a(href="#service") Service
+          li: a(href="#about") About
+
+    section#message
+      h2 Message
+      p 「ちいさく改善。お得に解決。」をモットーにお客様の様々なニーズにお応えします。
+
+    section#service
+      h2 Service
+
+    section#about
+      h2 About
+      p 合同会社オイコノミカについて
+      p 合同会社オイコノミカは、ウェブサイト制作・ソフトウェア開発の会社として西暦2018年5月22日に誕生しました。
+      
+      h3 Company Profile
+      p 会社概要
+
+      #company-data
+        dl
+          dt 社名
+          dd 合同会社オイコノミカ
+
+          dt 設立
+          dd 西暦2018年5月22日
+
+          dt 資本金
+          dd 500,000円
+
+          dt 所在地
+          dd 〒467-0062 愛知県名古屋市瑞穂区山下通5丁目8 アネックス瑞穂305号室
+
+          dt 最高経営責任者
+          dd 杉江 淳
+
+          dt 関連会社
+          dd 株式会社 NEXT ARROW
+
+      #company-history
+        p History
+        dl
+          dt 2018.5
+          dd 合同会社オイコノミカ設立
+
+          dt 2018.7
+          dd 株式会社 NEXT ARROWと業務提携を締結
+
+    footer
+      ul#footer-company-data
+        li 合同会社オイコノミカ
+        li 〒467-0062 愛知県名古屋市瑞穂区山下通5丁目8 アネックス瑞穂305号室
+
+      ul#footer-menu
+        li: a(href="#message") Message
+        li: a(href="#service") Service
+        li: a(href="#about") About
