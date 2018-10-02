@@ -1,6 +1,7 @@
 $theme_color: #87C1F8
 $font: 'Roboto', sans-serif
 $japanese_font: YuGothic,Yu Gothic,"ヒラギノ角ゴ ProN W3",Lucida Grande,Hiragino Kaku Gothic ProN,"メイリオ",Meiryo,Verdana,"ＭＳ Ｐゴシック",sans-serif
+$container_width: 970px
 
 @mixin vertical-align
   position: relative
@@ -15,7 +16,11 @@ $japanese_font: YuGothic,Yu Gothic,"ヒラギノ角ゴ ProN W3",Lucida Grande,Hi
 
 .container
   margin: 0 auto
-  width: 970px
+  width: $container_width
+
+.container-half
+  margin: 0 auto
+  width: 50%
 
 header
   box-shadow: 0 12px 12px rgba(0, 0, 0, 0.16)
@@ -108,3 +113,127 @@ section#service
         font-size: 12px
         margin: 0 auto
         width: 60%
+
+section#about
+  padding-left: 0
+  padding-right: 0
+
+  #company-profile
+    display: flex
+    flex-flow: row
+    padding-top: 16px
+
+    #company-data
+      @extend .container-half
+      background-color: #f6f6f6
+      color: #333
+      font-family: $japanese_font
+      font-size: 16px
+
+      dl
+        margin-top: 48px
+        margin-bottom: 48px
+        float: right
+        width: ($container_width / 2)
+        display: flex
+        flex-wrap: wrap
+        border: 1px solid #efefef
+        border-top: none
+        border-left: none
+        border-right: none
+
+        dt 
+          width: 30%
+          box-sizing: border-box
+          border-top: 1px solid #efefef
+          padding: 16px
+        dd
+          padding: 16px
+          width: 70%
+          box-sizing: border-box
+          border-top: 1px solid #efefef
+
+    #company-history
+      clear: both
+      @extend .container-half
+      background-color: #f0f0ef
+      padding-top: 48px
+      padding-bottom: 48px
+
+      h3
+        font-size: 16px
+        text-align: left
+
+      .timeline
+        height: 100%
+        width: ($container_width / 2)
+        position: relative
+
+        .timeline-point
+          margin-left: 32px
+
+        $timeline_ellipse_major_axis : 16px
+        $timeline_point_radius : 6px
+
+        // タイムラインのポイント楕円
+        .timeline-point:after
+          content: ''
+          position: absolute
+          width: $timeline_ellipse_major_axis
+          height: $timeline_ellipse_major_axis
+          background-color: white
+          border: 4px solid #FF9F55
+          top: 16px
+          border-radius: 50%
+          z-index: 1
+          margin-left: (-32px - $timeline_ellipse_major_axis - $timeline_point_radius)
+
+        // 吹き出し先端
+        .timeline-point:before
+          content: " "
+          height: 0
+          position: absolute
+          top: 16px
+          width: 0
+          z-index: 1
+          left: -10px
+          border: medium solid white
+          border-width: 10px 10px 10px 0
+          border-color: transparent white transparent transparent
+
+
+        // タイムラインの吹き出し内容
+        .timeline-point
+          padding: ($timeline_point_radius * 2)
+          margin-top: ($timeline_point_radius * 2)
+          background-color: white
+          position: relative
+          border-radius: $timeline_point_radius
+          
+          p
+            text-align: left
+
+      $timeline_axis_width: 6px
+
+      // タイムラインの時間軸
+      .timeline:after
+        content: ''
+        position: absolute
+        width: $timeline_axis_width
+        background-color: white
+        top: -64px
+        margin-left: -($timeline_axis_width / 2)
+        bottom: 0
+        margin-bottom: -(36px)
+
+  #company-profile:after
+      content: ""
+      display: block
+      position: absolute
+      left: 50%
+      margin-left: -48px
+      border-width: 48px 48px 0
+      border-style: solid
+      border-color: transparent
+      border-top-color: #fff
+
