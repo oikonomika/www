@@ -1,5 +1,6 @@
 $theme_color: #87C1F8
 $font: 'Roboto', sans-serif
+$japanese_font: YuGothic,Yu Gothic,"ヒラギノ角ゴ ProN W3",Lucida Grande,Hiragino Kaku Gothic ProN,"メイリオ",Meiryo,Verdana,"ＭＳ Ｐゴシック",sans-serif
 
 @mixin vertical-align
   position: relative
@@ -56,3 +57,21 @@ main
   background: $theme_color
   height: 100%
   min-height: calc(100vh)
+
+section
+  h2
+    font: $font
+    font-size: 66px
+    font-weight: 700
+    text-align: center
+    color: $theme_color
+
+  h3
+    text-align: center
+    font: $japanese_font
+    font-size: 12px
+    font-weight: 700
+  p
+    font-family: $japanese_font
+    text-align: center
+  padding: 118px
