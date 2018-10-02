@@ -1,6 +1,5 @@
 $theme_color: #87C1F8
-$font: 'Roboto', sans-serif
-$japanese_font: YuGothic,Yu Gothic,"ヒラギノ角ゴ ProN W3",Lucida Grande,Hiragino Kaku Gothic ProN,"メイリオ",Meiryo,Verdana,"ＭＳ Ｐゴシック",sans-serif
+$font: YuGothic,Yu Gothic,"ヒラギノ角ゴ ProN W3",Lucida Grande,Hiragino Kaku Gothic ProN,"メイリオ",Meiryo,Verdana,"ＭＳ Ｐゴシック",sans-serif
 $container_width: 970px
 
 @mixin vertical-align
@@ -66,18 +65,18 @@ main
 section
   h2
     font: $font
-    font-size: 66px
-    font-weight: 700
+    font-size: 56px
+    font-weight: 500
     text-align: center
     color: $theme_color
 
   h3
     text-align: center
-    font: $japanese_font
+    font: $font
     font-size: 12px
     font-weight: 700
   p
-    font-family: $japanese_font
+    font-family: $font
     text-align: center
   padding: 118px
 
@@ -91,7 +90,7 @@ section#service
     flex-flow: row
     list-style-type: none
     text-align: center
-    font-family: $japanese_font
+    font-family: $font
     font-weight: 700
 
     li
@@ -127,7 +126,7 @@ section#about
       @extend .container-half
       background-color: #f6f6f6
       color: #333
-      font-family: $japanese_font
+      font-family: $font
       font-size: 16px
 
       dl

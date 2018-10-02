@@ -12,8 +12,6 @@ html(lang="ja")
     meta(property='og:description', content='合同会社オイコノミカの企業説明サイトです。')
 
     link(href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css', rel='stylesheet')
-    link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet')
-
     link(rel="stylesheet" href="/css/main.css")
 
   body
@@ -22,18 +20,18 @@ html(lang="ja")
         h1: a(href='#', title='合同会社オイコノミカ'): img(src='./img/logomark.png', alt='合同会社オイコノミカ')
 
         ul
-          li: a(href="#message") Message
-          li: a(href="#service") Service
-          li: a(href="#about") About
+          li: a(href="#introduction") 会社紹介
+          li: a(href="#service") サービス
+          li: a(href="#about") 企業情報
 
     main
 
-    section#message
-      h2 Message
+    section#introduction
+      h2 会社紹介
       p 「ちいさく改善。お得に解決。」をモットーにお客様の様々なニーズにお応えします。
 
     section#service
-      h2 Service
+      h2 サービス
 
       mixin service(icon_class, name, description)
         li
@@ -47,7 +45,7 @@ html(lang="ja")
         +service('consulting-icon', 'コンサルティング', '弊社のナレッジベースを活かしビジネスモデル・人材育成・マーケティングの提案します。')
 
     section#about
-      h2 About
+      h2 企業情報
 
       #company-profile
         #company-data
