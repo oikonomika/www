@@ -11,7 +11,7 @@ html(lang="ja")
     meta(property='og:type', content='website')
     meta(property='og:description', content='合同会社オイコノミカの企業説明サイトです。')
 
-    link(href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css', rel='stylesheet')
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.3.1/css/all.css', integrity='sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU', crossorigin='anonymous')
     link(rel="stylesheet" href="/css/main.css")
 
   body
@@ -35,14 +35,15 @@ html(lang="ja")
 
       mixin service(icon_class, name, description)
         li
-          div(class=icon_class)
+          div
+            i(class=icon_class)
           h4= name
           p= description
 
       ul#service-list
-        +service('website-service-icon', 'ウェブサイト制作', 'ウェブサイトデザインから保守・運用までトータルでご提案します。')
-        +service('software-service-icon', 'ソフトウェア開発', '業務を最大限まで改善する品質の高いソフトウェアを開発します。')
-        +service('consulting-icon', 'コンサルティング', '弊社のナレッジベースを活かしビジネスモデル・人材育成・マーケティングの提案します。')
+        +service('fas fa-code', 'ウェブサイト制作', 'ウェブサイトデザインから保守・運用までトータルでご提案します。')
+        +service('fas fa-desktop', 'ソフトウェア開発', '業務を最大限まで改善する品質の高いソフトウェアを開発します。')
+        +service('far fa-lightbulb', 'コンサルティング', '弊社のナレッジベースを活かしビジネスモデル・人材育成・マーケティングの提案します。')
 
     section#about
       h2 企業情報
@@ -81,4 +82,4 @@ html(lang="ja")
   
     footer
       a#return-to-top(href='#')
-        i.icon-chevron-up
+        i(class='fas fa-caret-up')
