@@ -1,0 +1,58 @@
+$theme_color: #87C1F8
+$font: 'Roboto', sans-serif
+
+@mixin vertical-align
+  position: relative
+  top: 50%
+  -webkit-transform: translateY(-50%)
+  -ms-transform: translateY(-50%)
+  transform: translateY(-50%)
+
+*
+  margin: 0
+  padding: 0
+
+.container
+  margin: 0 auto
+  width: 970px
+
+header
+  box-shadow: 0 12px 12px rgba(0, 0, 0, 0.16)
+  position: relative
+
+  nav 
+    $nav_height: 60px
+    @extend .container
+    height: $nav_height
+
+    h1
+      float: left
+
+      img
+        height: $nav_height
+
+    ul
+      filter: drop-shadow(0.3px 0.3px 0.3px rgba(0,0,0,0.6));
+      float: right
+      display: flex
+      flex-flow: row
+      list-style-type: none
+      @include vertical-align()
+
+      li
+        padding: 0 16px
+
+        a
+          display: block
+          text-align: center
+          text-decoration: none
+
+          color: #454545
+          font-family: $font
+        a:hover
+          color: $theme_color
+
+main
+  background: $theme_color
+  height: 100%
+  min-height: calc(100vh)
