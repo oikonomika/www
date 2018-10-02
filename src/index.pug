@@ -11,7 +11,7 @@ html(lang="ja")
     meta(property='og:type', content='website')
     meta(property='og:description', content='合同会社オイコノミカの企業説明サイトです。')
 
-
+    link(href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css', rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet')
 
     link(rel="stylesheet" href="/css/main.css")
@@ -19,7 +19,7 @@ html(lang="ja")
   body
     header
       nav
-        h1: a(href='', title='合同会社オイコノミカ'): img(src='./img/logomark.png', alt='合同会社オイコノミカ')
+        h1: a(href='#', title='合同会社オイコノミカ'): img(src='./img/logomark.png', alt='合同会社オイコノミカ')
 
         ul
           li: a(href="#message") Message
@@ -80,13 +80,7 @@ html(lang="ja")
           .timeline
             +timeline_point('2018年5月', '合同会社オイコノミカを設立しました。')
             +timeline_point('2018年7月', '株式会社 NEXT ARROWと業務提携を締結しました。')
-
+  
     footer
-      ul#footer-company-data
-        li 合同会社オイコノミカ
-        li 〒467-0062 愛知県名古屋市瑞穂区山下通5丁目8 アネックス瑞穂305号室
-
-      ul#footer-menu
-        li: a(href="#message") Message
-        li: a(href="#service") Service
-        li: a(href="#about") About
+      a#return-to-top(href='#')
+        i.icon-chevron-up
