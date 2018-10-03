@@ -23,10 +23,13 @@ html(lang="ja")
       nav
         h1: a(href='#', title='合同会社オイコノミカ'): img(src='./img/logomark.png', alt='合同会社オイコノミカ')
 
+        mixin menu_item(href, name)
+          li: a(href=href)= name
+
         ul
-          li: a(href="#introduction") 会社紹介
-          li: a(href="#service") サービス
-          li: a(href="#about") 企業情報
+          +menu_item('#introduction', '会社紹介')
+          +menu_item('#service', 'サービス')
+          +menu_item('#about', '企業情報')
 
     main
       include includes/main.pug
@@ -55,27 +58,19 @@ html(lang="ja")
 
       #company-profile
         #company-data
+          mixin company-data-define(term, definition)
+            dt= term
+            dd= definition
+
           dl
-            dt 社名
-            dd 合同会社オイコノミカ
-
-            dt 設立
-            dd 2018年5月22日
-
-            dt 資本金
-            dd 500,000円
-
-            dt 所在地
-            dd 〒467-0062<br>愛知県名古屋市瑞穂区山下通5丁目8<br>アネックス瑞穂305号室
-
-            dt 最高経営責任者
-            dd 杉江 淳
-
-            dt 関連会社
-            dd 株式会社 NEXT ARROW
+            +company-data-define('社名', '合同会社オイコノミカ')
+            +company-data-define('設立', '2018年5月22日')
+            +company-data-define('資本金', '500,000円')
+            +company-data-define('所在地', '〒467-0062<br>愛知県名古屋市瑞穂区山下通5丁目8<br>アネックス瑞穂305号室')
+            +company-data-define('最高経営責任者', '杉江 淳')
+            +company-data-define('関連会社', '株式会社 NEXT ARROW')
 
         #company-history
-
           mixin timeline_point(date, description)
             .timeline-point.right
               h3= date
