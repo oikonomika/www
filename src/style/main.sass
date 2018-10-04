@@ -1,4 +1,5 @@
 $theme_color: #87C1F8
+$light_font_color: #FFFFFF
 $font: YuGothic,Yu Gothic,"ヒラギノ角ゴ ProN W3",Lucida Grande,Hiragino Kaku Gothic ProN,"メイリオ",Meiryo,Verdana,"ＭＳ Ｐゴシック",sans-serif
 $container_width: 970px
 
@@ -109,7 +110,7 @@ section
 section#service
   background: $theme_color
   h2
-    color: white
+    color: $light_font_color
 
   #service-list
     @extend .container
@@ -144,9 +145,11 @@ section#service
           filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3))
 
       h4
+        color: $light_font_color
         margin: 16px
         font-size: 16px
       p
+        color: $light_font_color
         font-size: 12px
         margin: 0 auto
         width: 100%
