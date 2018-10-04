@@ -47,12 +47,12 @@ html(lang="ja")
           div
             i(class=icon_class)
           h4= name
-          p= description
+          p!= description
 
       ul#service-list
-        +service('fas fa-code', 'ウェブサイト制作', 'ウェブサイトデザインから保守・運用までトータルでご提案します。')
-        +service('fas fa-desktop', 'ソフトウェア開発', '業務を最大限まで改善する品質の高いソフトウェアを開発します。')
-        +service('far fa-lightbulb', 'コンサルティング', '弊社のナレッジベースを活かしビジネスモデル・人材育成・マーケティングの提案します。')
+        +service('fas fa-code', 'ウェブサイト制作', 'ウェブサイトデザインから保守・運用まで<br>トータルでご提案します。')
+        +service('fas fa-desktop', 'ソフトウェア開発', 'ビジネスを最大限まで改善する<br>品質の高いソフトウェアを開発します。')
+        +service('far fa-lightbulb', 'コンサルティング', '弊社のナレッジベースを活かし<br>ビジネスモデル・人材育成を提案します。')
 
     section#about
       h2 企業情報
