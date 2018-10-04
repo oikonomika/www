@@ -61,7 +61,7 @@ html(lang="ja")
         #company-data
           mixin company-data-define(term, definition)
             dt= term
-            dd= definition
+            dd!= definition
 
           dl
             +company-data-define('社名', '合同会社オイコノミカ')
