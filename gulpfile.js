@@ -14,7 +14,7 @@ const path = {
     },
     src: {
         pug: 'src/*.pug',
-        style: 'src/style/main.sass',
+        style: 'src/styles/*.sass',
         script: 'src/scripts/**/*.js',
         img: 'src/img/**/*.*',
         favicon: 'src/favicon.ico'
@@ -22,7 +22,7 @@ const path = {
     watch: {
         pug: 'src/**/*.pug',
         script: 'src/scripts/**/*.js',
-        style: 'src/style/**/*.sass',
+        style: 'src/styles/**/*.sass',
         img: 'src/img/**/*.*',
     },
     clean: './dist'

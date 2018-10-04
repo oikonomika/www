@@ -1,38 +1,8 @@
-$theme_color: #87C1F8
-$light_font_color: #FFFFFF
-$font: YuGothic,Yu Gothic,"ヒラギノ角ゴ ProN W3",Lucida Grande,Hiragino Kaku Gothic ProN,"メイリオ",Meiryo,Verdana,"ＭＳ Ｐゴシック",sans-serif
-$container_width: 970px
-
-@mixin vertical-align
-  position: relative
-  top: 50%
-  transform: translateY(-50%)
+@import 'common'
 
 *
   margin: 0
   padding: 0
-
-.container
-  margin: 0 auto
-  width: $container_width
-
-.container-half
-  margin: 0 auto
-  width: 50%
-
-.fadein
-  opacity : 0
-  transform : translate(0, 50px)
-  transition : all 300ms
-
-.fadein.scrollin
-  z-index: 1
-  opacity : 1
-  transform : translate(0, 0)
-
-$header_height: 120px
-$header_scrolled_height: 80px
-$header_scroll_transion : all 0.2s ease-in-out
 
 header
   width: 100%
