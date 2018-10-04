@@ -43,7 +43,7 @@ html(lang="ja")
       h2 サービス
 
       mixin service(icon_class, name, description)
-        li
+        li.fadein
           div
             i(class=icon_class)
           h4= name
@@ -73,7 +73,7 @@ html(lang="ja")
 
         #company-history
           mixin timeline_point(date, description)
-            .timeline-point.right
+            .timeline-point.fadein
               h3= date
               p= description
 
