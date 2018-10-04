@@ -36,7 +36,19 @@ function setScrollFadein() {
   })
 }
 
+function setSmoothScroll() {
+  $('a[href^="#"]').click(function() {
+    var href= $(this).attr("href")
+    var hash = href == "#" || href == "" ? 'html' : href
+    var target = $(hash)
+    var position = target.offset().top
+    $('body,html').stop().animate({scrollTop:position}, 300, () => { window.location.hash = href })
+    return false
+  })
+}
+
 $(() => {
   setHeaderScrollAnimation()
   setScrollFadein()
+  setSmoothScroll()
 })
