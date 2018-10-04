@@ -7,21 +7,21 @@ const reload = browserSync.reload
 const path = {
     build: {
         pug: 'dist/',
-        js: 'dist/js/',
         css: 'dist/css/',
+        script: 'dist/scripts/',
         img: 'dist/img/',
         favicon: 'dist/'
     },
     src: {
         pug: 'src/*.pug',
-        js: 'src/js/main.js',
         style: 'src/style/main.sass',
+        script: 'src/scripts/**/*.js',
         img: 'src/img/**/*.*',
         favicon: 'src/favicon.ico'
     },
     watch: {
         pug: 'src/**/*.pug',
-        js: 'src/js/**/*.js',
+        script: 'src/scripts/**/*.js',
         style: 'src/style/**/*.sass',
         img: 'src/img/**/*.*',
     },
@@ -42,9 +42,9 @@ gulp.task('style:build', () => {
   .pipe(reload({stream: true}))
 })
 
-gulp.task('js:build', () => {
-  gulp.src(path.src.js)
-  .pipe(gulp.dest(path.build.js))
+gulp.task('script:build', () => {
+  gulp.src(path.src.script)
+  .pipe(gulp.dest(path.build.script))
   .pipe(reload({stream: true}))
 })
 
@@ -63,8 +63,8 @@ gulp.task('favicon:build', () => {
 gulp.task('watch', () => {
   gulp.watch(path.watch.pug, ['pug:build'])
   gulp.watch(path.watch.style, ['style:build'])
-  gulp.watch(path.watch.js, ['js:build'])
+  gulp.watch(path.watch.script, ['script:build'])
   gulp.watch(path.watch.img, ['image:build'])
 })
 
-gulp.task('default', ['pug:build', 'style:build', 'js:build', 'image:build', 'favicon:build'])
+gulp.task('default', ['pug:build', 'style:build', 'script:build', 'image:build', 'favicon:build'])

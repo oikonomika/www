@@ -5,8 +5,6 @@ $container_width: 970px
 @mixin vertical-align
   position: relative
   top: 50%
-  -webkit-transform: translateY(-50%)
-  -ms-transform: translateY(-50%)
   transform: translateY(-50%)
 
 *
@@ -21,22 +19,31 @@ $container_width: 970px
   margin: 0 auto
   width: 50%
 
+$header_height: 120px
+$header_scrolled_height: 80px
+$header_scroll_transion : all 0.2s ease-in-out
+
 header
-  box-shadow: 0 12px 12px rgba(0, 0, 0, 0.16)
-  position: relative
+  width: 100%
+  background: white
+  position: fixed
+  top: 0
+  z-index: 2
+  transition: $header_scroll_transion
 
   nav 
-    $nav_height: 120px
     @extend .container
-    height: $nav_height
+    height: $header_height
 
     h1
       float: left
-      padding-top: ($nav_height * 0.1)
+      padding-top: ($header_height * 0.1)
 
       img
-        margin-left: -16px
-        height: ($nav_height * 0.7)
+        height: ($header_height * 0.7)
+        margin-left: -24px
+        transition: $header_scroll_transion
+        transition-property: height, margin
 
     ul
       filter: drop-shadow(0.3px 0.3px 0.3px rgba(0,0,0,0.6));
@@ -60,7 +67,15 @@ header
         a:hover
           color: $theme_color
 
+  .header-is-animation
+    height: $header_scrolled_height
+
+    img
+      height: ($header_scrolled_height * 0.7)
+      margin-left: -16px
+
 main
+  margin-top: $header_height
   background: $theme_color
 
 section
