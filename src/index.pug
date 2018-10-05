@@ -1,0 +1,58 @@
+extends templates/base.pug
+
+block vars
+  - var isIndexPage = true
+
+block scripts
+  script(src='//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js')
+  script(src='//cdnjs.cloudflare.com/ajax/libs/typeit/5.10.7/typeit.min.js')
+
+block content
+  main
+    include includes/main.pug
+
+  section#introduction
+    h2 会社紹介
+    p 「ちいさく改善。お得に解決。」をモットーにお客様の様々なニーズにお応えします。
+
+  section#service
+    h2 サービス
+
+    mixin service(icon_class, name, description)
+      li.fadein
+        div
+          i(class=icon_class)
+        h4= name
+        p!= description
+
+    ul#service-list
+      +service('fas fa-code', 'ウェブサイト制作', 'ウェブサイトデザインから保守・運用までトータルでご提案します。')
+      +service('fas fa-desktop', 'ソフトウェア開発', 'ビジネスを最大限まで改善する品質の高いソフトウェアを開発します。')
+      +service('far fa-lightbulb', 'コンサルティング', '弊社のナレッジベースを活かしビジネスモデル・人材育成を提案します。')
+
+  section#about
+    h2 企業情報
+
+    #company-profile
+      #company-data
+        mixin company-data-define(term, definition)
+          dt= term
+          dd!= definition
+
+        dl
+          +company-data-define('社名', '合同会社オイコノミカ')
+          +company-data-define('設立', '2018年5月22日')
+          +company-data-define('資本金', '500,000円')
+          +company-data-define('所在地', '〒467-0062<br>愛知県名古屋市瑞穂区山下通5丁目8<br>アネックス瑞穂305号室')
+          +company-data-define('最高経営責任者', '杉江 淳')
+          +company-data-define('関連会社', '株式会社 NEXT ARROW')
+
+      #company-history
+        mixin timeline_point(date, description)
+          .timeline-point.fadein
+            h3= date
+            p= description
+
+        .timeline
+          +timeline_point('2018年5月', '合同会社オイコノミカを設立しました。')
+          +timeline_point('2018年7月', '株式会社 NEXT ARROWと業務提携を締結しました。')

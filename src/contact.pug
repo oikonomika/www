@@ -1,0 +1,42 @@
+extends templates/base.pug
+
+block vars
+  - var title = 'お問い合わせ'
+  - var isIndexPage = false
+
+block scripts
+  script(type='text/javascript').
+    $(function () {
+      $("form").submit(function(e) {
+        alert("お問い合わせを送信しました。担当者からご連絡いたします。");
+        });
+      });
+    });
+
+block styles
+  link(rel="stylesheet" href="/css/contact.css")
+
+block content
+  section#contact
+    .form-header
+      div.contact-icon: i(class='far fa-envelope')
+      h2 お問い合わせ
+    form(name='contact', method='POST' netlify)
+      mixin form_item(identifier, label, type)
+        .form-group
+          label(for=identifier)= label
+          input(type=type, id=identifier, name=identifier, size='50' required)
+
+      mixin form_item_multiline(identifier, label)
+        .form-group
+          label(for=identifier)= label
+          textarea(type=type, id=identifier, name=identifier, rows='8', cols='80' required)
+
+      +form_item('name', 'お名前', 'text')
+      +form_item('company-name', '会社名', 'text')
+      +form_item('email', 'メールアドレス', 'email')
+      +form_item_multiline('message', 'お問い合わせ内容')
+
+      div(netlify-recaptcha)
+
+      button(type='submit') 送信
