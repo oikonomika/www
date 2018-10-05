@@ -10,14 +10,16 @@ const path = {
         css: 'dist/css/',
         script: 'dist/scripts/',
         img: 'dist/img/',
-        favicon: 'dist/'
+        favicon: 'dist/',
+        robots: 'dist/'
     },
     src: {
         pug: 'src/*.pug',
         style: 'src/styles/*.sass',
         script: 'src/scripts/**/*.js',
         img: 'src/img/**/*.*',
-        favicon: 'src/favicon.ico'
+        favicon: 'src/favicon.ico',
+        robots: 'src/robots.txt'
     },
     watch: {
         pug: 'src/**/*.pug',
@@ -60,6 +62,12 @@ gulp.task('favicon:build', () => {
   .pipe(reload({stream: true}))
 })
 
+gulp.task('robots:build', () => {
+  gulp.src(path.src.robots)
+  .pipe(gulp.dest(path.build.robots))
+  .pipe(reload({stream: true}))
+})
+
 gulp.task('watch', () => {
   gulp.watch(path.watch.pug, ['pug:build'])
   gulp.watch(path.watch.style, ['style:build'])
@@ -67,4 +75,4 @@ gulp.task('watch', () => {
   gulp.watch(path.watch.img, ['image:build'])
 })
 
-gulp.task('default', ['pug:build', 'style:build', 'script:build', 'image:build', 'favicon:build'])
+gulp.task('default', ['pug:build', 'style:build', 'script:build', 'image:build', 'favicon:build', 'robots:build'])
