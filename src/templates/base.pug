@@ -26,16 +26,20 @@ html(lang="ja")
   body
     header
       nav
-        h1: a(href='#', title='合同会社オイコノミカ'): img(src='./img/logomark.png', alt='合同会社オイコノミカ')
+        - var hrefPrefix = isIndexPage ? '#' : '/index.html#'
+        h1: a(href=hrefPrefix, title='合同会社オイコノミカ'): img(src='./img/logomark.png', alt='合同会社オイコノミカ')
 
         mixin menu_item(href, name)
           li: a(href=href)= name
 
+        mixin index_menu_item(href, name)
+          li: a(href=hrefPrefix + href)= name
+
         ul
-          +menu_item('#introduction', '会社紹介')
-          +menu_item('#service', 'サービス')
-          +menu_item('#about', '企業情報')
-          +menu_item('#contact', 'お問い合わせ')
+          +index_menu_item('introduction', '会社紹介')
+          +index_menu_item('service', 'サービス')
+          +index_menu_item('about', '企業情報')
+          +menu_item('./contact.html', 'お問い合わせ')
 
     block content
   

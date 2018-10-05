@@ -1,5 +1,8 @@
 extends templates/base.pug
 
+block vars
+  - var isIndexPage = true
+
 block scripts
   script(src='//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js')
   script(src='//cdnjs.cloudflare.com/ajax/libs/typeit/5.10.7/typeit.min.js')
