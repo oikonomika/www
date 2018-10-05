@@ -4,6 +4,15 @@ block vars
   - var title = 'お問い合わせ'
   - var isIndexPage = false
 
+block scripts
+  script(type='text/javascript').
+    $(function () {
+      $("form").submit(function(e) {
+        alert("お問い合わせを送信しました。担当者からご連絡いたします。");
+        });
+      });
+    });
+
 block styles
   link(rel="stylesheet" href="/css/contact.css")
 
@@ -28,6 +37,6 @@ block content
       +form_item('email', 'メールアドレス', 'email')
       +form_item_multiline('message', 'お問い合わせ内容')
 
-      .data-netlify-recaptcha
+      div(netlify-recaptcha)
 
       button(type='submit') 送信
