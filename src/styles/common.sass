@@ -7,7 +7,7 @@ $light_font_color: #FFFFFF
 //
 // Font
 //
-$font: YuGothic,Yu Gothic,"ヒラギノ角ゴ ProN W3",Lucida Grande,Hiragino Kaku Gothic ProN,"メイリオ",Meiryo,Verdana,"ＭＳ Ｐゴシック",sans-serif
+$font: 'Noto Serif JP', YuGothic,Yu Gothic,"メイリオ",Meiryo,Verdana,"ＭＳ Ｐゴシック",sans-serif
 
 //
 // Layout
@@ -17,10 +17,13 @@ $header_height: 120px
 $header_scrolled_height: 80px
 $header_scroll_transion : all 0.2s ease-in-out
 
+* 
+  font-family: $font
+
 .container
   margin: 0 auto
   width: $container_width
-
+    
 @mixin vertical-align
   position: relative
   top: 50%
