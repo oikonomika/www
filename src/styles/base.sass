@@ -18,13 +18,16 @@ header
 
     h1
       float: left
-      padding-top: ($header_height * 0.1)
 
-      img
-        height: ($header_height * 0.7)
-        margin-left: -24px
+      svg
+        margin-top: ($header_height * 0.2)
+        height: ($header_height * 0.6)
+        float: left
         transition: $header_scroll_transion
+        transition-duration: 0.05s
         transition-property: height, margin
+      svg + svg
+        margin-left: 12px
 
     ul
       filter: drop-shadow(0.3px 0.3px 0.3px rgba(0,0,0,0.6));
@@ -51,9 +54,9 @@ header
   .header-is-animation
     height: $header_scrolled_height
 
-    img
-      height: ($header_scrolled_height * 0.7)
-      margin-left: -16px
+    svg
+      margin-top: ($header_scrolled_height * 0.2)
+      height: ($header_scrolled_height * 0.6)
 
 main
   margin-top: $header_height

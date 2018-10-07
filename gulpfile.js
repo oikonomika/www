@@ -17,7 +17,7 @@ const path = {
         pug: 'src/*.pug',
         style: 'src/styles/*.sass',
         script: 'src/scripts/**/*.js',
-        img: 'src/img/**/*.*',
+        img: 'src/img/**/!(_)*.*',
         favicon: 'src/favicon.ico',
         robots: 'src/robots.txt'
     },

@@ -29,7 +29,9 @@ html(lang="ja")
     header
       nav
         - var hrefPrefix = isIndexPage ? '#' : '/#'
-        h1: a(href=hrefPrefix, title='合同会社オイコノミカ'): img(src='./img/logomark.png', alt='合同会社オイコノミカ')
+        h1: a(href=hrefPrefix, title='合同会社オイコノミカ')
+          include ../img/_symbol.svg
+          include ../img/_logotype.svg
 
         mixin menu_item(href, name)
           li: a(href=href)= name
