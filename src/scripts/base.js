@@ -1,9 +1,7 @@
 function setHeaderScrollAnimation() {
-  const headerElms = [$('header'), $('nav'), $('h1 img')]
-  var scrollTop = 0
-
   $(window).scroll(function() {
-    scrollTop = $(window).scrollTop()
+    const headerElms = [$('header'), $('nav'), $('h1 img')]
+    const scrollTop = $(window).scrollTop()
 
     if($('header').height() <= scrollTop) {
         $('header').css('box-shadow', '0 4px 4px -2px rgba(0,0,0,.2)')
@@ -47,8 +45,9 @@ function setSmoothScroll() {
   })
 }
 
+setHeaderScrollAnimation()
+setScrollFadein()
+
 $(() => {
-  setHeaderScrollAnimation()
-  setScrollFadein()
   setSmoothScroll()
 })
