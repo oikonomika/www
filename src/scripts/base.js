@@ -19,7 +19,7 @@ function setHeaderScrollAnimation() {
 }
 
 function setScrollFadein() {
-  $(window).scroll(function (){
+  $(window).on('scroll resize', function (){
     $('.fadein').each(function(){
       var elemPos = $(this).offset().top
       var scroll = $(window).scrollTop()
