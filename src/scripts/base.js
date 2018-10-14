@@ -18,7 +18,7 @@ function setHeaderScrollAnimation() {
   })
 }
 
-function setScrollFadein() {
+function setFadein() {
   $(window).on('scroll resize', function (){
     $('.fadein').each(function(){
       var elemPos = $(this).offset().top
@@ -45,21 +45,21 @@ function setSmoothScroll() {
   })
 }
 
-function toggleResponsiveNavigation() {
+function toggleResponsiveMenu() {
   const nav = document.getElementsByTagName("nav")[0]
   nav.classList.toggle("responsive")
 }
 
-function setResetResponsiveNavigation() {
+function setResetResponsiveMenu() {
   $(window).on('resize', function (e){
     const nav = document.getElementsByTagName("nav")[0]
     nav.classList.remove("responsive")
   })
 }
 
-setResetResponsiveNavigation()
+setResetResponsiveMenu()
 setHeaderScrollAnimation()
-setScrollFadein()
+setFadein()
 
 $(() => {
   setSmoothScroll()

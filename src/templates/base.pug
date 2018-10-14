@@ -37,10 +37,10 @@ html(lang="ja")
           li: a(href=href)= name
 
         mixin index_menu_item(href, name)
-          li: a(href=hrefPrefix + href, onclick='toggleResponsiveNavigation()')= name
+          li: a(href=hrefPrefix + href, onclick='toggleResponsiveMenu()')= name
 
         mixin humburger_menu_item()
-          li.humberger-button: a(onclick='toggleResponsiveNavigation()'): i(class='fa fa-bars')
+          li.humberger-button: a(onclick='toggleResponsiveMenu()'): i(class='fa fa-bars')
 
         ul
           +humburger_menu_item()
