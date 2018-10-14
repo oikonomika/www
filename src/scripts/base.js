@@ -1,7 +1,7 @@
 function setHeaderScrollAnimation() {
   const breakpointWidth = 970
   $(window).on('resize scroll load', function (e){
-    const headerElms = [$('header'), $('nav'), $('h1 img')]
+    const headerElms = [$('header'), $('nav'), $('h1 svg')]
     const scrollTop = $(window).scrollTop()
 
     if(0 < scrollTop || $(window).width() <= breakpointWidth) {
