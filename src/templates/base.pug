@@ -37,9 +37,13 @@ html(lang="ja")
           li: a(href=href)= name
 
         mixin index_menu_item(href, name)
-          li: a(href=hrefPrefix + href)= name
+          li: a(href=hrefPrefix + href, onclick='toggleResponsiveNavigation()')= name
+
+        mixin humburger_menu_item()
+          li.humberger-button: a(onclick='toggleResponsiveNavigation()'): i(class='fa fa-bars')
 
         ul
+          +humburger_menu_item()
           +index_menu_item('introduction', '会社紹介')
           +index_menu_item('service', 'サービス')
           +index_menu_item('about', '企業情報')

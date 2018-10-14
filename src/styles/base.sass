@@ -7,15 +7,16 @@
 header
   width: 100%
   background: white
-  position: fixed
+  position: sticky
   top: 0
-  z-index: 2
+  z-index: 100
   transition: $header_scroll_transion
-  transform: translate3d(0, 0, 0)
 
   nav 
     @extend .container
     height: $header_height
+    transition: $header_scroll_transion
+    transition-property: height
 
     h1
       float: left
@@ -49,8 +50,44 @@ header
         a:hover
           color: $theme_color
 
+      .humberger-button
+        display: none
+
       li + li
         padding-left: 16px
+
+  @media screen and (max-width: $container_width)
+    nav
+      li:not(:first-child) 
+        display: none
+
+      ul .humberger-button
+        display: block
+
+  @media screen and (max-width: $container_width)
+    nav.responsive
+      height: 100vh
+
+      ul
+        display: flex
+        flex-flow: column
+        justify-content: center
+        top: auto
+        transform: none
+
+        .humberger-button
+          height: $header_height
+
+        li
+          display: flex
+          align-items: center
+
+          justify-content: flex-end
+          height: $header_scrolled_height
+
+        li + li
+          padding-left: unset
+
 
   .header-is-animation
     height: $header_scrolled_height
@@ -59,8 +96,12 @@ header
       margin-top: ($header_scrolled_height * 0.2)
       height: ($header_scrolled_height * 0.6)
 
+  @media screen and (max-width: $container_width)
+    .header-is-animation.responsive ul
+      li.humberger-button
+        height: $header_scrolled_height
+
 main
-  margin-top: $header_height
   background: $theme_color
 
 section

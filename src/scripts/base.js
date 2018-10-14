@@ -45,6 +45,11 @@ function setSmoothScroll() {
   })
 }
 
+function toggleResponsiveNavigation() {
+  const nav = document.getElementsByTagName("nav")[0]
+  nav.classList.toggle("responsive")
+}
+
 setHeaderScrollAnimation()
 setScrollFadein()
 
