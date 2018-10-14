@@ -37,6 +37,13 @@ $header_scroll_transion : all 0.2s ease-in-out
   margin: 0 auto
   width: 50%
 
+  @media screen and (max-width: $container_width)
+    width: unset
+    max-width: $container_width
+    padding-left: 16px
+    padding-right: 16px
+    max-width: $container_width
+
 .fadein
   opacity : 0
   transform : translate(0, 50px)
