@@ -1,9 +1,10 @@
 function setHeaderScrollAnimation() {
-  $(window).scroll(function() {
+  const breakpointWidth = 970
+  $(window).on('resize scroll load', function (e){
     const headerElms = [$('header'), $('nav'), $('h1 img')]
     const scrollTop = $(window).scrollTop()
 
-    if(0 < scrollTop) {
+    if(0 < scrollTop || $(window).width() <= breakpointWidth) {
         $('header').css('box-shadow', '0 4px 4px -2px rgba(0,0,0,.2)')
         for(let elm of headerElms) {
           elm.addClass('header-is-animation')
