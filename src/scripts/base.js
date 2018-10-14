@@ -50,6 +50,14 @@ function toggleResponsiveNavigation() {
   nav.classList.toggle("responsive")
 }
 
+function setResetResponsiveNavigation() {
+  $(window).on('resize', function (e){
+    const nav = document.getElementsByTagName("nav")[0]
+    nav.classList.remove("responsive")
+  })
+}
+
+setResetResponsiveNavigation()
 setHeaderScrollAnimation()
 setScrollFadein()
 
