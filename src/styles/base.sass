@@ -87,8 +87,15 @@ header
           justify-content: flex-end
           height: $header_scrolled_height
 
+        li:not(:first-child)
+          border-top: 1px solid #E8E8E8
+          margin-left: -100vw
+
         li + li
           padding-left: unset
+
+        li:last-child
+          border-bottom: 1px solid #E8E8E8
 
 
   .header-is-animation
