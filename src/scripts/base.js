@@ -1,3 +1,19 @@
+function initHeader() {
+  const breakpointWidth = 970
+  const headerElms = [$('header'), $('nav'), $('h1 svg')]
+  const scrollTop = $(window).scrollTop()
+
+  if(0 < scrollTop || $(window).width() <= breakpointWidth) {
+      for(let elm of headerElms) {
+        const prevTransition = elm.css('transition')
+        console.log(prevTransition)
+        elm.css('transition', 'none')
+        elm.addClass('header-is-animation')
+        elm.css('transition', prevTransition)
+      }
+  }
+}
+
 function setHeaderScrollAnimation() {
   const breakpointWidth = 970
   $(window).on('resize scroll load', function (e){
@@ -61,6 +77,10 @@ function setResetResponsiveMenu() {
 setResetResponsiveMenu()
 setHeaderScrollAnimation()
 setFadein()
+
+$(document).ready(() => {
+  initHeader()
+})
 
 $(() => {
   setSmoothScroll()
