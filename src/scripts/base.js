@@ -74,12 +74,36 @@ function setResetResponsiveMenu() {
   })
 }
 
+function initScrollSpy() {
+  $(window).on('load scroll resize', function (){
+    var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop
+    var sections = $("section").get().reverse()
+
+    if(sections.length == 1) {
+      $('a[href*=' + sections[0].id + ']').addClass('active')
+      return
+    }
+
+    for (var section of sections) {
+      const threhold = section.clientHeight * 0.6
+      if (section.offsetTop - threhold <= scrollPosition) {
+        $('.active').removeClass('active')
+        $('a[href*=' + section.id + ']').addClass('active')
+        return
+      }
+    }
+
+    $('.active').removeClass('active')
+  })
+}
+
 setResetResponsiveMenu()
 setHeaderScrollAnimation()
 setFadein()
 
 $(document).ready(() => {
   initHeader()
+  initScrollSpy()
 })
 
 $(() => {

@@ -34,7 +34,6 @@ header
         margin-right: -970px
 
     ul
-      filter: drop-shadow(0.3px 0.3px 0.3px rgba(0,0,0,0.6));
       float: right
       display: flex
       flex-flow: row
@@ -47,10 +46,17 @@ header
           display: block
           text-align: center
           text-decoration: none
-
+          padding-top: 4px
+          padding-bottom: 4px
+          border-bottom: 3px solid transparent
+          transition: 0.3s
           color: #454545
+
         a:hover
           color: $theme_color
+
+        a.active
+          border-bottom-color: #FF9F55
 
       .humberger-button
         display: none
