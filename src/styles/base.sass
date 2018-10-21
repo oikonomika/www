@@ -365,18 +365,21 @@ section#about
   padding-bottom: 0
 
 footer
-  @extend .container
-  height: 128px
+  margin-top: 64px
+  background: #f0f0ef
   text-align: center
 
   #return-to-top
-      @include vertical-align()
-      color: #f0f0ef
+      display: block
+      height: 100%
+      width: 100%
+      color: white
       text-decoration: none;
 
   #return-to-top i
+      padding: 16px
       margin: 0
-      font-size: 64px
+      font-size: 32px
 
   #return-to-top:hover
       color: #87C1F8
