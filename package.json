@@ -2,29 +2,15 @@
   "name": "www-oikonomika-jp",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "build": "gulp",
-    "serve": "browser-sync start --files dist --server dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "parcel build src/index.pug"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/oikonomika/www.git"
-  },
-  "author": "",
-  "license": "UNLICENSED",
-  "private": true,
-  "bugs": {
-    "url": "https://github.com/oikonomika/www/issues"
-  },
-  "homepage": "https://github.com/oikonomika/www#readme",
   "devDependencies": {
-    "browser-sync": "^2.24.4",
-    "gulp": "^3.9.1"
+    "cssnano": "^4.1.10",
+    "pug": "^3.0.0",
+    "sass": "^1.26.5"
   },
   "dependencies": {
-    "gulp-pug": "^4.0.1",
-    "gulp-sass": "^4.0.1"
+    "parcel-bundler": "^1.12.4"
   }
 }
