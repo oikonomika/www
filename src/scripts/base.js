@@ -62,7 +62,7 @@ function setSmoothScroll() {
   })
 }
 
-function toggleResponsiveMenu() {
+window.toggleResponsiveMenu = function() {
   const nav = document.getElementsByTagName("nav")[0]
   nav.classList.toggle("responsive")
 }
