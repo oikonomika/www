@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "start": "parcel serve src/index.pug",
     "build": "parcel build src/index.pug"
   },
   "devDependencies": {
